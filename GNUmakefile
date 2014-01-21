@@ -591,3 +591,10 @@ spin.o:		spin.c $(SPIN_SRCS) $(INCL)
 sync.o:		sync.c $(SYNC_SRCS) $(INCL)
 tsd.o:		tsd.c $(TSD_SRCS) $(INCL)
 version.o:	version.rc $(INCL)
+
+install:
+	install -d $(DESTDIR)/mingw/include $(DESTDIR)/mingw/bin $(DESTDIR)/mingw/lib
+	install pthread.h sched.h semaphore.h $(DESTDIR)/mingw/include
+	install *.a $(DESTDIR)/mingw/lib
+	install *.dll $(DESTDIR)/mingw/bin
+
